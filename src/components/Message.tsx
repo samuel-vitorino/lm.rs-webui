@@ -1,8 +1,10 @@
-import assistantIcon from "../assets/assistant.jpeg"
-import userIcon from "../assets/user.jpeg"
+import assistantIcon from "../assets/assistant.jpeg";
+import userIcon from "../assets/user.jpeg";
 import Markdown from "react-markdown";
-import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
-import {dark} from 'react-syntax-highlighter/dist/esm/styles/prism'
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
+import {dark} from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+import { Typewriter } from 'react-simple-typewriter'
 
 export interface MessageProps {
   message: String;
@@ -19,7 +21,12 @@ export const Message: React.FC<MessageProps> = ({ message, user }) => {
             {user &&
                 <p style={{backgroundColor: "#f5f5f5", borderRadius: "20px", padding: "10px 20px 10px 20px", maxWidth: "40%", marginLeft: "auto", width: "fit-content"}}>{message}</p>
             }
-            {!user &&
+            {!user && !message &&
+                <div style={{width: "20px"}}>
+                    <Typewriter words={[""]} cursor loop={false} />
+                </div>    
+            }
+            {!user && message &&
                 <Markdown 
                     children={message as string}
                     components={{
