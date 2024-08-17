@@ -35,7 +35,6 @@ export const Message: React.FC<MessageProps> = ({ message, user }) => {
                             const match = /language-(\w+)/.exec(className || '')
                             return match ? (
                             <SyntaxHighlighter
-                                {...rest}
                                 PreTag="div"
                                 children={String(children).replace(/\n$/, '')}
                                 language={match[1]}

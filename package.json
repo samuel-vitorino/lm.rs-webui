@@ -2,7 +2,7 @@
   "name": "lm.rs-webui",
   "private": true,
   "version": "1.0",
-  "homepage": "https://samuel-vitorino.github.io/lm.rs-webui",
+  "homepage": "https://samuel-vitorino.github.io/lm.rs-webui/",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "flowbite-react": "^0.10.1",

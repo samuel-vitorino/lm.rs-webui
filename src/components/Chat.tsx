@@ -58,7 +58,7 @@ function Chat( {endpoint, reconnect, setConnected}: ChatProps ) {
       setConnected(true);
     }
 
-    socket.onerror = (e) => {
+    socket.onerror = () => {
       toast.error('Failed to connect to lm.rs backend', {
         position: "top-center",
         autoClose: 4000,
