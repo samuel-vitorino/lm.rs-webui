@@ -39,7 +39,7 @@ function App() {
           </IconContext.Provider>
         </div>
       </Navbar>
-      <Chat endpoint={endpoint} setConnected={setConnected} reconnect={reconnect}/>
+      <Chat endpoint={endpoint} connected={connected} setConnected={setConnected} reconnect={reconnect}/>
     </>
   )
 }

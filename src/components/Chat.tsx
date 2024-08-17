@@ -9,11 +9,12 @@ import '../styles/chat.css';
 
 interface ChatProps {
   endpoint: string;
+  connected: boolean;
   reconnect: boolean;
   setConnected: (connected: boolean) => void;
 }
 
-function Chat( {endpoint, reconnect, setConnected}: ChatProps ) {
+function Chat( {endpoint, reconnect, connected, setConnected}: ChatProps ) {
   const [message, setMessage] = useState("");
   const [userTurn, setUserTurn] = useState(true);
   const [messagesList, setMessagesList] = useState<MessageProps[]>([]);
@@ -110,7 +111,7 @@ function Chat( {endpoint, reconnect, setConnected}: ChatProps ) {
       <footer className="flex items-center justify-around" id="chatInput">
         <textarea rows={1} placeholder="Message lm.rs" onKeyDown={handleKeyDown} value={message} onChange={handleChange} className="bg-transparent" id="chatTextArea"/>
           <IconContext.Provider value={{ color: "black", size: "25px", className: "self-center" }}>
-            <button id="chatSendButton" className='flex' disabled={message.length == 0 || !userTurn} onClick={addUserMessage}><FaArrowUp/></button>
+            <button id="chatSendButton" className='flex' disabled={message.length == 0 || !userTurn || !connected} onClick={addUserMessage}><FaArrowUp/></button>
           </IconContext.Provider>
       </footer>
     </>
