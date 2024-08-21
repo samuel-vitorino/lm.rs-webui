@@ -14,7 +14,7 @@ Some TODOs:
 
 - [ ] Chats management
 - [ ] Give custom instructions
-- [ ] Add dark theme
+- [X] Add dark theme
 
 ## Instructions
 

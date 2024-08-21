@@ -19,7 +19,7 @@ export const Message: React.FC<MessageProps> = ({ message, user }) => {
         }
         <div className="flex flex-col" style={{marginLeft: user ? "0px" : "20px", textWrap: "wrap", overflowWrap: "break-word", width: "100%"}}>
             {user &&
-                <p style={{backgroundColor: "#f5f5f5", borderRadius: "20px", padding: "10px 20px 10px 20px", maxWidth: "40%", marginLeft: "auto", width: "fit-content"}}>{message}</p>
+                <p style={{borderRadius: "20px", padding: "10px 20px 10px 20px", maxWidth: "40%", marginLeft: "auto", width: "fit-content"}} className="bg-[#f5f5f5] dark:bg-[#323232] dark:text-white">{message}</p>
             }
             {!user && !message &&
                 <div style={{width: "20px"}}>
@@ -27,7 +27,8 @@ export const Message: React.FC<MessageProps> = ({ message, user }) => {
                 </div>    
             }
             {!user && message &&
-                <Markdown 
+                <Markdown
+                    className="dark:text-white" 
                     children={message as string}
                     components={{
                         code(props) {

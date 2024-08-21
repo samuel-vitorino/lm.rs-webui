@@ -91,7 +91,7 @@ function Chat( {endpoint, reconnect, connected, setConnected}: ChatProps ) {
   const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
       if (event.key === 'Enter') {
           event.preventDefault();
-          if (userTurn) {
+          if (userTurn && connected) {
             addUserMessage();
           }
       }
@@ -100,7 +100,7 @@ function Chat( {endpoint, reconnect, connected, setConnected}: ChatProps ) {
   return (
     <>
       <ToastContainer/>
-      <div className="flex flex-col justify-between" style={{margin: "0 20% 0 20%", maxHeight: "78%", overflowY: "auto"}} id="chatContainer">
+      <div className="flex flex-col justify-between mx-3 sm:mx-20 md:mx-44 xl:mx-96" style={{maxHeight: "78%", overflowY: "auto"}} id="chat-container">
         {
           messagesList.map((item, idx) => {
             return <Message key={idx} message={item.message} user={item.user}/>;
@@ -108,10 +108,10 @@ function Chat( {endpoint, reconnect, connected, setConnected}: ChatProps ) {
         }
         <div ref={chatContainerRef}/>
       </div>
-      <footer className="flex items-center justify-around" id="chatInput">
-        <textarea rows={1} placeholder="Message lm.rs" onKeyDown={handleKeyDown} value={message} onChange={handleChange} className="bg-transparent" id="chatTextArea"/>
-          <IconContext.Provider value={{ color: "black", size: "25px", className: "self-center" }}>
-            <button id="chatSendButton" className='flex' disabled={message.length == 0 || !userTurn || !connected} onClick={addUserMessage}><FaArrowUp/></button>
+      <footer className="flex items-center justify-around dark:bg-[#303030] dark:text-white bg-[#f5f5f5] mx-3 md:m-0 md:w-6/12 md:self-center" id="chat-input">
+        <textarea rows={1} placeholder="Message lm.rs" onKeyDown={handleKeyDown} value={message} onChange={handleChange} className="bg-transparent" id="chat-text-area"/>
+          <IconContext.Provider value={{ color: "black", size: "20px", className: "self-center" }}>
+            <button id="chat-send-button" className='flex' disabled={message.length == 0 || !userTurn || !connected} onClick={addUserMessage}><FaArrowUp/></button>
           </IconContext.Provider>
       </footer>
     </>

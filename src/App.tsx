@@ -1,5 +1,5 @@
 import logo from '/rust.svg'
-import { Navbar, Dropdown, TextInput, Label, Button, Badge } from "flowbite-react";
+import { Navbar, Dropdown, TextInput, Label, Button, Badge, DarkThemeToggle} from "flowbite-react";
 import { IconContext } from "react-icons";
 import { IoIosSettings } from "react-icons/io";
 import Chat from './components/Chat'
@@ -15,14 +15,15 @@ function App() {
 
   return (
     <>
-      <Navbar fluid rounded>
+      <Navbar fluid className='dark:bg-[#212121]'>
         <Navbar.Brand href="/">
           <img src={logo} className="mr-3 h-6 sm:h-9" alt="lm.rs logo" />
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">lm.rs</span>
         </Navbar.Brand>
-        <div>
+        <div className='flex'>
+          <DarkThemeToggle className='focus:outline-none color-[#7d7d7d] dark:text-[#7d7d7d] focus:ring-0 dark:outline-none dark:hover:bg-gray-300'/>
           <IconContext.Provider value={{ color: "#7d7d7d", size: "25px", className: "global-class-name" }}>
-            <Dropdown style={{padding: "10px"}} label="settings" dismissOnClick={false} renderTrigger={() => <button><IoIosSettings style={{width: "40px"}} /></button>}>
+            <Dropdown className='dark:bg-[#181818]' style={{padding: "10px"}} label="settings" dismissOnClick={false} renderTrigger={() => <button className='hover:bg-gray-100 dark:hover:bg-gray-300 rounded-lg'><IoIosSettings style={{width: "40px"}} /></button>}>
               <div className='p-3'>
                 <div>
                   <Label htmlFor="endpoint" value="Backend Endpoint" />
