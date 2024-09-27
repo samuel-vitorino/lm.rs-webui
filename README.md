@@ -2,7 +2,7 @@
 
 ![Brief demo of the WebUI](repo_cover.gif)
 
-Simple frontend WebUI for the [lm.rs](https://github.com/samuel-vitorino/lm.rs) project, with markdown support and syntax highlighting. Talk to Google's Gemma 2 on the browser, on-device!
+Simple frontend WebUI for the [lm.rs](https://github.com/samuel-vitorino/lm.rs) project, with markdown support and syntax highlighting. Talk to Language Models on the browser, on-device!
 
 Make sure you compiled and are running the [lm.rs](https://github.com/samuel-vitorino/lm.rs) backend binary first.
 
