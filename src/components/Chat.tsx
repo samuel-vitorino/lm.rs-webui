@@ -67,7 +67,6 @@ function Chat( {endpoint, reconnect, connected, setConnected}: ChatProps ) {
         const data: ResponseMessage = JSON.parse(event.data);
         
         if (data) {
-          console.log(data)
           if (data.category === MessageCategory.OUTPUT) {
             if (data.text === "<eos>") {
               setUserTurn(true);
