@@ -56,7 +56,7 @@ function Chat( {endpoint, reconnect, connected, setConnected}: ChatProps ) {
   );
 
   useEffect(() => {
-    chatContainerRef.current!.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
+    chatContainerRef.current!.scrollIntoView({ behavior: "auto", block: "start", inline: "start" });
   }, [messagesList])
 
   useEffect(() => {
